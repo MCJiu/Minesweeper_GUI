@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLCDNumber" name="lcdNumber"/>
+      </item>
+      <item>
+       <widget class="QGraphicsView" name="graphicsView"/>
+      </item>
+      <item>
+       <widget class="QLCDNumber" name="lcdNumber_2"/>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QGraphicsView" name="graphicsView_2">
+      <property name="minimumSize">
+       <size>
+        <width>380</width>
+        <height>210</height>
+       </size>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>400</width>
+     <height>17</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu_D">
+    <property name="title">
+     <string>难度设置(&amp;D)</string>
+    </property>
+    <addaction name="actionPrimary_P"/>
+    <addaction name="actionIntermediate_M"/>
+    <addaction name="actionAdvanced_A"/>
+    <addaction name="separator"/>
+    <addaction name="actionCustomize_C"/>
+   </widget>
+   <addaction name="menu_D"/>
+  </widget>
+  <action name="actionPrimary_P">
+   <property name="text">
+    <string>初级(&amp;P)</string>
+   </property>
+  </action>
+  <action name="actionIntermediate_M">
+   <property name="text">
+    <string>中级(&amp;M)</string>
+   </property>
+  </action>
+  <action name="actionAdvanced_A">
+   <property name="text">
+    <string>高级(&amp;A)</string>
+   </property>
+  </action>
+  <action name="actionCustomize_C">
+   <property name="text">
+    <string>自定义(&amp;C)</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
