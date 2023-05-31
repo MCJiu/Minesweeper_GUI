@@ -6,33 +6,50 @@
 #include <QMouseEvent>
 #include <QObject>
 
-class LatticeItem : public QObject, public QGraphicsPixmapItem {
+enum
+{
+    CLOSED,
+    OPENED,
+    FLAG,
+    QUESTION
+};
+
+class LatticeItem : public QObject, public QGraphicsPixmapItem
+{
     Q_OBJECT
 
-private:
+  private:
     int m_row;
     int m_column;
     bool m_isMine;
     int m_mineAround;
-    int m_status; // 0-未被打开，1-已被打开，2-插旗，3-问号
+    int m_status; // CLOSED, OPENED, FLAG, QUESTION
 
-    void mousePressEvent(QGraphicsSceneMouseEvent* event) override;
-    void mouseDoubleClickEvent(QMouseEvent* event);
+    void mousePressEvent(QGraphicsSceneMouseEvent *event) override;
+    void mouseDoubleClickEvent(QMouseEvent *event);
 
-public:
-    explicit LatticeItem(QObject* parent = nullptr);
-    ~LatticeItem() { }
+  public:
+    explicit LatticeItem(QObject *parent = nullptr);
+    ~LatticeItem() {}
     bool isMine() { return m_isMine; }
     int mineAround() { return m_mineAround; }
     int status() { return m_status; }
+
+    // 设置私有成员的方法
+    void setRow(int row) { m_row = row; }
+    void setColumn(int column) { m_column = column; }
+    void setMine(bool isMine) { m_isMine = isMine; }
+    void setMineAround(int mineAround) { m_mineAround = mineAround; }
+    void setStatus(int status) { m_status = status; }
+
     void updateLattice();
     int r_leftClick();
     int openLattice();
 
-signals:
-    void leftClick(int row, int column);
-    void rightClick(int row, int column);
-    void doubleClick(int row, int column);
+  signals:
+    void leftClickSignal(int row, int column);
+    void rightClickSignal(int row, int column);
+    void doubleClickSignal(int row, int column);
 };
 
 #endif // LATTICEITEM_H

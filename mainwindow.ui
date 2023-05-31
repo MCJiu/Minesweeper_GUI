@@ -29,7 +29,7 @@
      </layout>
     </item>
     <item>
-     <widget class="QGraphicsView" name="graphicsView_2">
+     <widget class="QGraphicsView" name="gameView">
       <property name="minimumSize">
        <size>
         <width>380</width>

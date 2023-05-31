@@ -1,30 +1,32 @@
 #include "latticeitem.h"
 #include <QDebug>
 
-void LatticeItem::mousePressEvent(QGraphicsSceneMouseEvent* event)
+void LatticeItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
     if (event->button() == Qt::LeftButton) //左键单击
     {
-        emit leftClick(m_row, m_column);
-    } else if (event->button() == Qt::RightButton) {
-        emit rightClick(m_row, m_column);
+        emit leftClickSignal(m_row, m_column);
+    }
+    else if (event->button() == Qt::RightButton)
+    {
+        emit rightClickSignal(m_row, m_column);
     }
 }
 
-void LatticeItem::mouseDoubleClickEvent(QMouseEvent* event)
+void LatticeItem::mouseDoubleClickEvent(QMouseEvent *event)
 {
     Q_UNUSED(event);
-    emit doubleClick(m_row, m_column);
+    emit doubleClickSignal(m_row, m_column);
 }
 
-LatticeItem::LatticeItem(QObject* parent)
-    : QObject { parent }
+LatticeItem::LatticeItem(QObject *parent)
+    : QObject{parent}
 {
     m_row = 0;
     m_column = 0;
     m_isMine = false;
     m_mineAround = 0;
-    m_status = 0;
+    m_status = CLOSED;
     setFlag(GraphicsItemFlag::ItemIsSelectable);
     setAcceptedMouseButtons(Qt::AllButtons);
 
@@ -33,16 +35,24 @@ LatticeItem::LatticeItem(QObject* parent)
 
 void LatticeItem::updateLattice()
 {
-    if (m_status == 0) //格子未打开
+    if (m_status == CLOSED) //格子未打开
     {
         setPixmap(QPixmap(":/mine/pic/notSweep.jpg"));
-    } else if (m_status == 2) {
+    }
+    else if (m_status == FLAG)
+    {
         setPixmap(QPixmap(":/mine/pic/flag.jpg"));
-    } else if (m_status == 1) {
-        if (isMine()) {
+    }
+    else if (m_status == OPENED)
+    {
+        if (isMine())
+        {
             setPixmap(QPixmap(":/mine/pic/mine_step.jpg"));
-        } else {
-            switch (m_mineAround) {
+        }
+        else
+        {
+            switch (m_mineAround)
+            {
             case 0:
                 setPixmap(QPixmap(":/mine/pic/mine0.jpg"));
                 break;
@@ -77,9 +87,11 @@ void LatticeItem::updateLattice()
     }
 }
 
+/*
 int LatticeItem::r_leftClick()
 {
-    if (m_status == 0) {
+    if (m_status == CLOSED) {
+
     }
 }
 
@@ -88,7 +100,8 @@ int LatticeItem::openLattice()
     if (m_status == 0) {
         m_status = 1;
         updateLattice();
-        if (m_mineAround==0) {
+        if (m_mineAround == 0) {
         }
     }
 }
+*/
