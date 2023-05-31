@@ -40,14 +40,14 @@
         <file>pic/classicTheme/6.png</file>
         <file>pic/classicTheme/7.png</file>
         <file>pic/classicTheme/8.png</file>
-        <file>pic/classicTheme/打开的空白格.png</file>
-        <file>pic/classicTheme/好雷.png</file>
-        <file>pic/classicTheme/哭脸.png</file>
-        <file>pic/classicTheme/没打开的空白格.png</file>
-        <file>pic/classicTheme/旗子.png</file>
-        <file>pic/classicTheme/问号.png</file>
-        <file>pic/classicTheme/笑脸.png</file>
-        <file>pic/classicTheme/炸雷.png</file>
+        <file>pic/classicTheme/boom.png</file>
+        <file>pic/classicTheme/cryface.png</file>
+        <file>pic/classicTheme/flg.png</file>
+        <file>pic/classicTheme/goodboom.png</file>
+        <file>pic/classicTheme/opensqure.png</file>
+        <file>pic/classicTheme/quest.png</file>
+        <file>pic/classicTheme/smile.png</file>
+        <file>pic/classicTheme/unopensqure.png</file>
     </qresource>
     <qresource prefix="/dogtheme">
         <file>pic/dogTheme/eight.png</file>
@@ -58,12 +58,12 @@
         <file>pic/dogTheme/six.png</file>
         <file>pic/dogTheme/three.png</file>
         <file>pic/dogTheme/two.png</file>
-        <file>pic/dogTheme/打开的空白格.png</file>
-        <file>pic/dogTheme/好雷.png</file>
-        <file>pic/dogTheme/哭.png</file>
-        <file>pic/dogTheme/没被打开的空白格.png</file>
-        <file>pic/dogTheme/问号.png</file>
-        <file>pic/dogTheme/笑.png</file>
-        <file>pic/dogTheme/炸雷.png</file>
+        <file>pic/dogTheme/boomboom.png</file>
+        <file>pic/dogTheme/cry.png</file>
+        <file>pic/dogTheme/haha.png</file>
+        <file>pic/dogTheme/nice.png</file>
+        <file>pic/dogTheme/open.png</file>
+        <file>pic/dogTheme/questes.png</file>
+        <file>pic/dogTheme/unopen.png</file>
     </qresource>
 </RCC>
