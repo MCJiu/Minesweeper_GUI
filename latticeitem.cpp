@@ -5,18 +5,18 @@ void LatticeItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
     if (event->button() == Qt::LeftButton) //左键单击
     {
-        emit leftClickSignal(m_row, m_column);
+        emit leftClickSignal();
     }
     else if (event->button() == Qt::RightButton)
     {
-        emit rightClickSignal(m_row, m_column);
+        emit rightClickSignal();
     }
 }
 
 void LatticeItem::mouseDoubleClickEvent(QMouseEvent *event)
 {
     Q_UNUSED(event);
-    emit doubleClickSignal(m_row, m_column);
+    emit doubleClickSignal();
 }
 
 LatticeItem::LatticeItem(QObject *parent)

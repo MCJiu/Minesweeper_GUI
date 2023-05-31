@@ -47,9 +47,9 @@ class LatticeItem : public QObject, public QGraphicsPixmapItem
     int openLattice();
 
   signals:
-    void leftClickSignal(int row, int column);
-    void rightClickSignal(int row, int column);
-    void doubleClickSignal(int row, int column);
+    void leftClickSignal();
+    void rightClickSignal();
+    void doubleClickSignal();
 };
 
 #endif // LATTICEITEM_H

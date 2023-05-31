@@ -45,6 +45,11 @@ class PlayScene : public QGraphicsScene
         difficulty << m_row << m_column << m_mineNum;
         return difficulty;
     }
+
+    void r_leftClick();
+    void r_rightClick();
+    void r_doubleClick();
+    void setRandMine();
   public slots:
 };
 
