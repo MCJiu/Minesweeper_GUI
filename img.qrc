@@ -66,4 +66,26 @@
         <file>pic/dogTheme/questes.png</file>
         <file>pic/dogTheme/unopen.png</file>
     </qresource>
+    <qresource prefix="/pvzTheme">
+        <file>pic/pvzTheme/1.png</file>
+        <file>pic/pvzTheme/2.png</file>
+        <file>pic/pvzTheme/3.png</file>
+        <file>pic/pvzTheme/4.png</file>
+        <file>pic/pvzTheme/5.png</file>
+        <file>pic/pvzTheme/6.png</file>
+        <file>pic/pvzTheme/7.png</file>
+        <file>pic/pvzTheme/8.png</file>
+        <file>pic/pvzTheme/block1.png</file>
+        <file>pic/pvzTheme/block2.png</file>
+        <file>pic/pvzTheme/block3.png</file>
+        <file>pic/pvzTheme/block4.png</file>
+        <file>pic/pvzTheme/block5.png</file>
+        <file>pic/pvzTheme/boom.png</file>
+        <file>pic/pvzTheme/flag.png</file>
+        <file>pic/pvzTheme/flag2.png</file>
+        <file>pic/pvzTheme/flag3.png</file>
+        <file>pic/pvzTheme/mine.png</file>
+        <file>pic/pvzTheme/mine2.png</file>
+        <file>pic/pvzTheme/mine3.png</file>
+    </qresource>
 </RCC>
