@@ -65,5 +65,6 @@
         <file>pic/dogTheme/open.png</file>
         <file>pic/dogTheme/questes.png</file>
         <file>pic/dogTheme/unopen.png</file>
+        <file>pic/dogTheme/flaghouse.png</file>
     </qresource>
 </RCC>
