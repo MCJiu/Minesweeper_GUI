@@ -8,5 +8,53 @@
         <file>pic/classicTheme/6.png</file>
         <file>pic/classicTheme/7.png</file>
         <file>pic/classicTheme/8.png</file>
+        <file>pic/classicTheme/boom.png</file>
+        <file>pic/classicTheme/cryface.png</file>
+        <file>pic/classicTheme/flg.png</file>
+        <file>pic/classicTheme/goodboom.png</file>
+        <file>pic/classicTheme/opensqure.png</file>
+        <file>pic/classicTheme/quest.png</file>
+        <file>pic/classicTheme/smile.png</file>
+        <file>pic/classicTheme/unopensqure.png</file>
+    </qresource>
+    <qresource prefix="/dog">
+        <file>pic/dogTheme/boomboom.png</file>
+        <file>pic/dogTheme/cry.png</file>
+        <file>pic/dogTheme/eight.png</file>
+        <file>pic/dogTheme/five.png</file>
+        <file>pic/dogTheme/flaghouse.png</file>
+        <file>pic/dogTheme/four.png</file>
+        <file>pic/dogTheme/haha.png</file>
+        <file>pic/dogTheme/nice.png</file>
+        <file>pic/dogTheme/one.png</file>
+        <file>pic/dogTheme/open.png</file>
+        <file>pic/dogTheme/questes.png</file>
+        <file>pic/dogTheme/seven.png</file>
+        <file>pic/dogTheme/six.png</file>
+        <file>pic/dogTheme/three.png</file>
+        <file>pic/dogTheme/two.png</file>
+        <file>pic/dogTheme/unopen.png</file>
+    </qresource>
+    <qresource prefix="/pvz">
+        <file>pic/pvzTheme/1.png</file>
+        <file>pic/pvzTheme/2.png</file>
+        <file>pic/pvzTheme/3.png</file>
+        <file>pic/pvzTheme/4.png</file>
+        <file>pic/pvzTheme/5.png</file>
+        <file>pic/pvzTheme/6.png</file>
+        <file>pic/pvzTheme/7.png</file>
+        <file>pic/pvzTheme/8.png</file>
+        <file>pic/pvzTheme/block1.png</file>
+        <file>pic/pvzTheme/block2.png</file>
+        <file>pic/pvzTheme/block3.png</file>
+        <file>pic/pvzTheme/block4.png</file>
+        <file>pic/pvzTheme/block5.png</file>
+        <file>pic/pvzTheme/boom.png</file>
+        <file>pic/pvzTheme/flag.png</file>
+        <file>pic/pvzTheme/flag2.png</file>
+        <file>pic/pvzTheme/flag3.png</file>
+        <file>pic/pvzTheme/mine.png</file>
+        <file>pic/pvzTheme/mine2.png</file>
+        <file>pic/pvzTheme/mine3.png</file>
     </qresource>
 </RCC>

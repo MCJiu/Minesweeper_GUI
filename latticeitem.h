@@ -15,6 +15,13 @@ enum
     MINE_GAMEOVER
 };
 
+enum
+{
+    CLASSIC,
+    DOG,
+    PVZ
+};
+
 class LatticeItem : public QObject, public QGraphicsPixmapItem
 {
     Q_OBJECT
@@ -25,17 +32,19 @@ class LatticeItem : public QObject, public QGraphicsPixmapItem
     bool m_isMine;
     int m_mineAround;
     int m_status; // CLOSED, OPENED, FLAG, QUESTION
+    int m_theme;
 
   protected:
     void mousePressEvent(QGraphicsSceneMouseEvent *event) override;
     void mouseDoubleClickEvent(QGraphicsSceneMouseEvent *event) override;
 
   public:
-    explicit LatticeItem(QObject *parent = nullptr);
+    explicit LatticeItem(int theme = CLASSIC, QObject *parent = nullptr);
     ~LatticeItem() {}
     bool isMine() { return m_isMine; }
     int mineAround() { return m_mineAround; }
     int status() { return m_status; }
+    int theme() { return m_theme; }
 
     // 设置私有成员的方法
     void setRow(int row) { m_row = row; }
@@ -43,6 +52,7 @@ class LatticeItem : public QObject, public QGraphicsPixmapItem
     void setMine(bool isMine) { m_isMine = isMine; }
     void setMineAround(int mineAround) { m_mineAround = mineAround; }
     void setStatus(int status) { m_status = status; }
+    void setTheme(int theme) { m_theme = theme; }
 
     void updateLattice();
     int r_leftClick();

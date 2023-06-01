@@ -3,12 +3,13 @@
 #include <stdlib.h>
 #include <time.h>
 
-const int SIDE_LENTH = 20;
+const int SIDE_LENTH = 40;
 
 PlayScene::PlayScene(QObject *parent)
     : QGraphicsScene{parent}
 {
     setMap(9, 9, 10);
+    m_theme = CLASSIC;
 }
 
 void PlayScene::initialize()
@@ -30,7 +31,7 @@ void PlayScene::initialize()
     {
         for (int j = 0; j < m_column; j++)
         {
-            board[i][j] = new LatticeItem();
+            board[i][j] = new LatticeItem(m_theme);
             board[i][j]->setRow(i);
             board[i][j]->setColumn(j);
             board[i][j]->setPos(QPointF(left + SIDE_LENTH * j, top + SIDE_LENTH * i));
@@ -260,6 +261,18 @@ void PlayScene::showAllMine(int result)
                 }
                 board[i][j]->updateLattice();
             }
+        }
+    }
+}
+
+void PlayScene::changeLatticeTheme()
+{
+    for (int i = 0; i < m_row; i++)
+    {
+        for (int j = 0; j < m_column; j++)
+        {
+            board[i][j]->setTheme(m_theme);
+            board[i][j]->updateLattice();
         }
     }
 }

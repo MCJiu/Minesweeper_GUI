@@ -91,8 +91,17 @@
     <addaction name="separator"/>
     <addaction name="actionQuit_Q"/>
    </widget>
+   <widget class="QMenu" name="menu_T">
+    <property name="title">
+     <string>主题(&amp;T)</string>
+    </property>
+    <addaction name="actionClassic_C"/>
+    <addaction name="actionDog_D"/>
+    <addaction name="actionPvZ_P"/>
+   </widget>
    <addaction name="menu_G"/>
    <addaction name="menu_D"/>
+   <addaction name="menu_T"/>
   </widget>
   <action name="actionPrimary_P">
    <property name="text">
@@ -122,6 +131,21 @@
   <action name="actionQuit_Q">
    <property name="text">
     <string>退出(&amp;Q)</string>
+   </property>
+  </action>
+  <action name="actionClassic_C">
+   <property name="text">
+    <string>经典(&amp;C)</string>
+   </property>
+  </action>
+  <action name="actionDog_D">
+   <property name="text">
+    <string>小狗(&amp;D)</string>
+   </property>
+  </action>
+  <action name="actionPvZ_P">
+   <property name="text">
+    <string>植物大战僵尸(&amp;P)</string>
    </property>
   </action>
  </widget>

@@ -39,6 +39,12 @@ class MainWindow : public QMainWindow
 
     void on_actionNewGame_N_triggered();
 
+    void on_actionClassic_C_triggered();
+
+    void on_actionDog_D_triggered();
+
+    void on_actionPvZ_P_triggered();
+
   private:
     Ui::MainWindow *ui;
     PlayScene *scene;

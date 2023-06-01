@@ -23,6 +23,7 @@ class PlayScene : public QGraphicsScene
     int m_mineNum;    //总雷数
     int m_remainMine; // 剩余雷数
     int m_steps;      // 已进行的操作数
+    int m_theme;
     LatticeItem *board[MAX_ROW][MAX_COLUMN];
 
   public:
@@ -45,12 +46,9 @@ class PlayScene : public QGraphicsScene
 
     int mineNum() { return m_mineNum; }
 
-    QList<int> difficulty()
-    {
-        QList<int> difficulty;
-        difficulty << m_row << m_column << m_mineNum;
-        return difficulty;
-    }
+    int theme() { return m_theme; }
+
+    void setTheme(int theme) { m_theme = theme; }
 
     void r_leftClick(int x, int y);
     void r_rightClick(int x, int y);
@@ -61,6 +59,8 @@ class PlayScene : public QGraphicsScene
     void on_gameStatusChange();
     void on_flagNumChange();
     void showAllMine(int result);
+    void changeLatticeTheme();
+
   signals:
     void gameStatusChangeSignal();
     void flagNumChangeSignal();

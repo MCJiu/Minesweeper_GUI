@@ -5,7 +5,7 @@
 #include <mainwindow.h>
 #include <playscene.h>
 
-const int SIDE_LENTH = 20;
+const int SIDE_LENTH = 40;
 
 //LatticeItem **createBoard(int row, int column);
 //void freeBoard(LatticeItem **board, int row);
@@ -159,4 +159,22 @@ void MainWindow::on_actionAdvanced_A_triggered()
 void MainWindow::on_actionNewGame_N_triggered()
 {
     scene->initialize();
+}
+
+void MainWindow::on_actionClassic_C_triggered()
+{
+    scene->setTheme(CLASSIC);
+    scene->changeLatticeTheme();
+}
+
+void MainWindow::on_actionDog_D_triggered()
+{
+    scene->setTheme(DOG);
+    scene->changeLatticeTheme();
+}
+
+void MainWindow::on_actionPvZ_P_triggered()
+{
+    scene->setTheme(PVZ);
+    scene->changeLatticeTheme();
 }
