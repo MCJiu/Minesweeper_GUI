@@ -8,6 +8,12 @@
 const int MAX_ROW = 24;
 const int MAX_COLUMN = 30;
 
+enum
+{
+    LOSE,
+    WIN
+};
+
 class PlayScene : public QGraphicsScene
 {
     Q_OBJECT
@@ -46,10 +52,21 @@ class PlayScene : public QGraphicsScene
         return difficulty;
     }
 
-    void r_leftClick();
-    void r_rightClick();
-    void r_doubleClick();
+    void r_leftClick(int x, int y);
+    void r_rightClick(int x, int y);
+    void r_doubleClick(int x, int y);
+    void openLattice(int x, int y);
     void setRandMine();
+    void setMineAround();
+    void on_gameStatusChange();
+    void on_flagNumChange();
+    void showAllMine(int result);
+  signals:
+    void gameStatusChangeSignal();
+    void flagNumChangeSignal();
+    void gameOver(int result);
+    void changeLCD_remainMineSignal(int remain_mine);
+    void timerStartSignal();
   public slots:
 };
 

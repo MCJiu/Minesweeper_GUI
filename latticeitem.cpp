@@ -5,18 +5,23 @@ void LatticeItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {
     if (event->button() == Qt::LeftButton) //左键单击
     {
-        emit leftClickSignal();
+        qDebug() << "左键按下 " << m_row << ", " << m_column;
+        emit leftClickSignal(m_row, m_column);
     }
     else if (event->button() == Qt::RightButton)
     {
-        emit rightClickSignal();
+        qDebug() << "右键按下 " << m_row << ", " << m_column;
+        emit rightClickSignal(m_row, m_column);
     }
 }
 
-void LatticeItem::mouseDoubleClickEvent(QMouseEvent *event)
+void LatticeItem::mouseDoubleClickEvent(QGraphicsSceneMouseEvent *event)
 {
-    Q_UNUSED(event);
-    emit doubleClickSignal();
+    if (event->button() == Qt::LeftButton) // 左键双击
+    {
+        qDebug() << "双击 " << m_row << ", " << m_column;
+        emit doubleClickSignal(m_row, m_column);
+    }
 }
 
 LatticeItem::LatticeItem(QObject *parent)
@@ -42,6 +47,10 @@ void LatticeItem::updateLattice()
     else if (m_status == FLAG)
     {
         setPixmap(QPixmap(":/mine/pic/flag.jpg"));
+    }
+    else if (m_status == MINE_GAMEOVER)
+    {
+        setPixmap(QPixmap(":/mine/pic/mine.jpg"));
     }
     else if (m_status == OPENED)
     {

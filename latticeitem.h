@@ -11,7 +11,8 @@ enum
     CLOSED,
     OPENED,
     FLAG,
-    QUESTION
+    QUESTION,
+    MINE_GAMEOVER
 };
 
 class LatticeItem : public QObject, public QGraphicsPixmapItem
@@ -25,8 +26,9 @@ class LatticeItem : public QObject, public QGraphicsPixmapItem
     int m_mineAround;
     int m_status; // CLOSED, OPENED, FLAG, QUESTION
 
+  protected:
     void mousePressEvent(QGraphicsSceneMouseEvent *event) override;
-    void mouseDoubleClickEvent(QMouseEvent *event);
+    void mouseDoubleClickEvent(QGraphicsSceneMouseEvent *event) override;
 
   public:
     explicit LatticeItem(QObject *parent = nullptr);
@@ -47,9 +49,9 @@ class LatticeItem : public QObject, public QGraphicsPixmapItem
     int openLattice();
 
   signals:
-    void leftClickSignal();
-    void rightClickSignal();
-    void doubleClickSignal();
+    void leftClickSignal(int row, int column);
+    void rightClickSignal(int row, int column);
+    void doubleClickSignal(int row, int column);
 };
 
 #endif // LATTICEITEM_H

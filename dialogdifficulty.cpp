@@ -2,9 +2,8 @@
 
 #include "ui_dialogdifficulty.h"
 
-DialogDifficulty::DialogDifficulty(QWidget* parent)
-    : QDialog(parent)
-    , ui(new Ui::DialogDifficulty)
+DialogDifficulty::DialogDifficulty(QWidget *parent)
+    : QDialog(parent), ui(new Ui::DialogDifficulty)
 {
     ui->setupUi(this);
 }
@@ -28,7 +27,7 @@ void DialogDifficulty::iniDialogDifficulty(int row, int column, int mine)
 void DialogDifficulty::on_spinBoxRow_valueChanged(int rowValue)
 {
     int colunmValue = ui->spinBoxColumn->value();
-    ui->spinBoxMine->setMaximum(rowValue * colunmValue);
+    ui->spinBoxMine->setMaximum(rowValue * colunmValue * 0.9);
 }
 // 在列数设置发生变化时改变雷数设置的最大值
 void DialogDifficulty::on_spinBoxColumn_valueChanged(int colunmValue)

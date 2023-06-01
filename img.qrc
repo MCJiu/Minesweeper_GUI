@@ -40,13 +40,5 @@
         <file>pic/classicTheme/6.png</file>
         <file>pic/classicTheme/7.png</file>
         <file>pic/classicTheme/8.png</file>
-        <file>pic/classicTheme/打开的空白格.png</file>
-        <file>pic/classicTheme/好雷.png</file>
-        <file>pic/classicTheme/哭脸.png</file>
-        <file>pic/classicTheme/没打开的空白格.png</file>
-        <file>pic/classicTheme/旗子.png</file>
-        <file>pic/classicTheme/问号.png</file>
-        <file>pic/classicTheme/笑脸.png</file>
-        <file>pic/classicTheme/炸雷.png</file>
     </qresource>
 </RCC>
