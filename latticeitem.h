@@ -5,22 +5,7 @@
 #include <QGraphicsSceneMouseEvent>
 #include <QMouseEvent>
 #include <QObject>
-
-enum
-{
-    CLOSED,
-    OPENED,
-    FLAG,
-    QUESTION,
-    MINE_GAMEOVER
-};
-
-enum
-{
-    CLASSIC,
-    DOG,
-    PVZ
-};
+#include <globalconst.h>
 
 class LatticeItem : public QObject, public QGraphicsPixmapItem
 {

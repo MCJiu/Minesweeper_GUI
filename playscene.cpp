@@ -3,8 +3,6 @@
 #include <stdlib.h>
 #include <time.h>
 
-const int SIDE_LENTH = 40;
-
 PlayScene::PlayScene(QObject *parent)
     : QGraphicsScene{parent}
 {

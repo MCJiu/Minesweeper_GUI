@@ -26,8 +26,6 @@ class DialogDifficulty : public QDialog
     // 在列数设置发生变化时改变雷数设置的最大值
     void on_spinBoxColumn_valueChanged(int arg1);
 
-    void on_spinBoxMine_valueChanged(int arg1);
-
   private:
     Ui::DialogDifficulty *ui;
 };

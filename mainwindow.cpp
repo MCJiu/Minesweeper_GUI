@@ -5,8 +5,6 @@
 #include <mainwindow.h>
 #include <playscene.h>
 
-const int SIDE_LENTH = 40;
-
 //LatticeItem **createBoard(int row, int column);
 //void freeBoard(LatticeItem **board, int row);
 
@@ -15,6 +13,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
     scene = new PlayScene();
+    emoScene = new EmojiScene();
 
     /* 设置计时器 */
     fTimer = new QTimer(this);
@@ -31,6 +30,17 @@ MainWindow::MainWindow(QWidget *parent)
     connect(scene, &PlayScene::changeLCD_remainMineSignal, this, &MainWindow::on_changeRemainMineLCD);
     scene->initialize();
     ui->gameView->setScene(scene);
+    ui->gameView->setFixedHeight(SIDE_LENTH * scene->row() + 5); // +5是为了额外多出一些空间
+    ui->gameView->setFixedWidth(SIDE_LENTH * scene->column() + 5);
+    ui->emojiView->setFixedHeight(45);
+    ui->emojiView->setFixedWidth(45);
+    ui->lcd_remainMine->setFixedHeight(45);
+    ui->lcd_remainMine->setFixedWidth(100);
+    ui->lcd_timer->setFixedHeight(45);
+    ui->lcd_timer->setFixedWidth(100);
+    this->setFixedHeight(SIDE_LENTH * scene->row() + 100);
+    this->setFixedWidth(SIDE_LENTH * scene->column() + 20);
+    ui->emojiView->setScene(emoScene);
 
     // LatticeItem二维数组，用于存放游戏面板
     //    LatticeItem **board = createBoard(playSceneItem->row(), playSceneItem->column());
@@ -59,14 +69,16 @@ void MainWindow::on_actionCustomize_C_triggered()
     DialogDifficulty *pDifficultyCfg = new DialogDifficulty(this);
     Qt::WindowFlags flags = pDifficultyCfg->windowFlags();
     pDifficultyCfg->setWindowFlags(flags | Qt::MSWindowsFixedSizeDialogHint);
-    pDifficultyCfg->iniDialogDifficulty(9, 9, 10); //后续记得修改参数
+    pDifficultyCfg->iniDialogDifficulty(scene->row(), scene->column(), scene->mineNum()); //后续记得修改参数
     pDifficultyCfg->setWindowTitle("自定义难度");
     int ret_val = pDifficultyCfg->exec();
     if (ret_val == QDialog::Accepted) // 如果玩家按下确定按钮
     {
         scene->setMap(pDifficultyCfg->rowCount(), pDifficultyCfg->columnCount(), pDifficultyCfg->mineCount());
-        ui->gameView->setMinimumHeight(SIDE_LENTH * scene->row() + 50); // +50是为了额外多出一些空间
-        ui->gameView->setMinimumWidth(SIDE_LENTH * scene->column() + 50);
+        ui->gameView->setFixedHeight(SIDE_LENTH * scene->row() + 5); // +5是为了额外多出一些空间
+        ui->gameView->setFixedWidth(SIDE_LENTH * scene->column() + 5);
+        this->setFixedHeight(SIDE_LENTH * scene->row() + 100);
+        this->setFixedWidth(SIDE_LENTH * scene->column() + 20);
         scene->initialize();
     }
     delete pDifficultyCfg;
@@ -101,11 +113,13 @@ void MainWindow::on_gameOver(int result)
     }
     else // result==LOSE
     {
+        emoScene->setEmojiStatus(CRY);
         QString dlgTitle = "游戏结束";
         QString dlgMsg = "很遗憾，扫雷失败!";
         QMessageBox::critical(this, dlgTitle, dlgMsg);
     }
     scene->initialize();
+    emoScene->setEmojiStatus(SMILE);
 }
 
 void MainWindow::on_changeRemainMineLCD(int remain_mine)
@@ -135,24 +149,30 @@ void MainWindow::on_timer_timeout()
 void MainWindow::on_actionPrimary_P_triggered()
 {
     scene->setMap(9, 9, 10);
-    ui->gameView->setMinimumHeight(SIDE_LENTH * scene->row() + 50); // +50是为了额外多出一些空间
-    ui->gameView->setMinimumWidth(SIDE_LENTH * scene->column() + 50);
+    ui->gameView->setFixedHeight(SIDE_LENTH * scene->row() + 5); // +5是为了额外多出一些空间
+    ui->gameView->setFixedWidth(SIDE_LENTH * scene->column() + 5);
+    this->setFixedHeight(SIDE_LENTH * scene->row() + 100);
+    this->setFixedWidth(SIDE_LENTH * scene->column() + 20);
     scene->initialize();
 }
 
 void MainWindow::on_actionIntermediate_M_triggered()
 {
     scene->setMap(16, 16, 40);
-    ui->gameView->setMinimumHeight(SIDE_LENTH * scene->row() + 50); // +50是为了额外多出一些空间
-    ui->gameView->setMinimumWidth(SIDE_LENTH * scene->column() + 50);
+    ui->gameView->setFixedHeight(SIDE_LENTH * scene->row() + 5); // +5是为了额外多出一些空间
+    ui->gameView->setFixedWidth(SIDE_LENTH * scene->column() + 5);
+    this->setFixedHeight(SIDE_LENTH * scene->row() + 100);
+    this->setFixedWidth(SIDE_LENTH * scene->column() + 20);
     scene->initialize();
 }
 
 void MainWindow::on_actionAdvanced_A_triggered()
 {
     scene->setMap(16, 30, 99);
-    ui->gameView->setMinimumHeight(SIDE_LENTH * scene->row() + 50); // +50是为了额外多出一些空间
-    ui->gameView->setMinimumWidth(SIDE_LENTH * scene->column() + 50);
+    ui->gameView->setFixedHeight(SIDE_LENTH * scene->row() + 5); // +5是为了额外多出一些空间
+    ui->gameView->setFixedWidth(SIDE_LENTH * scene->column() + 5);
+    this->setFixedHeight(SIDE_LENTH * scene->row() + 100);
+    this->setFixedWidth(SIDE_LENTH * scene->column() + 20);
     scene->initialize();
 }
 
@@ -165,16 +185,24 @@ void MainWindow::on_actionClassic_C_triggered()
 {
     scene->setTheme(CLASSIC);
     scene->changeLatticeTheme();
+    emoScene->setEmojiTheme(CLASSIC);
 }
 
 void MainWindow::on_actionDog_D_triggered()
 {
     scene->setTheme(DOG);
     scene->changeLatticeTheme();
+    emoScene->setEmojiTheme(DOG);
 }
 
 void MainWindow::on_actionPvZ_P_triggered()
 {
     scene->setTheme(PVZ);
     scene->changeLatticeTheme();
+    emoScene->setEmojiTheme(PVZ);
+}
+
+void MainWindow::on_actionAbout_A_triggered()
+{
+    QMessageBox::information(this, "关于", "本项目由北京邮电大学计算机学院 MCJiu, cby, Gcoin42 开发\n联系邮箱: mcjiu@bupt.edu.cn");
 }

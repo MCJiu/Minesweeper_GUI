@@ -5,6 +5,8 @@
 #include <QMainWindow>
 #include <QTime>
 #include <QTimer>
+#include <emojiscene.h>
+#include <globalconst.h>
 #include <playscene.h>
 
 QT_BEGIN_NAMESPACE
@@ -45,9 +47,12 @@ class MainWindow : public QMainWindow
 
     void on_actionPvZ_P_triggered();
 
+    void on_actionAbout_A_triggered();
+
   private:
     Ui::MainWindow *ui;
     PlayScene *scene;
+    EmojiScene *emoScene;
     QTimer *fTimer;
     int timer_time; // 计时器应显示的值
   signals:

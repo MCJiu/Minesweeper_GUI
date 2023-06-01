@@ -3,16 +3,11 @@
 
 #include <QGraphicsScene>
 #include <QList>
+#include <globalconst.h>
 #include <latticeitem.h>
 
 const int MAX_ROW = 24;
 const int MAX_COLUMN = 30;
-
-enum
-{
-    LOSE,
-    WIN
-};
 
 class PlayScene : public QGraphicsScene
 {

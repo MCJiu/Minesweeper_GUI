@@ -21,7 +21,7 @@
        <widget class="QLCDNumber" name="lcd_remainMine">
         <property name="maximumSize">
          <size>
-          <width>200</width>
+          <width>100</width>
           <height>50</height>
          </size>
         </property>
@@ -31,7 +31,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QGraphicsView" name="graphicsView">
+       <widget class="QGraphicsView" name="emojiView">
         <property name="maximumSize">
          <size>
           <width>16777215</width>
@@ -44,7 +44,7 @@
        <widget class="QLCDNumber" name="lcd_timer">
         <property name="maximumSize">
          <size>
-          <width>200</width>
+          <width>100</width>
           <height>50</height>
          </size>
         </property>
@@ -89,6 +89,7 @@
     </property>
     <addaction name="actionNewGame_N"/>
     <addaction name="separator"/>
+    <addaction name="actionAbout_A"/>
     <addaction name="actionQuit_Q"/>
    </widget>
    <widget class="QMenu" name="menu_T">
@@ -146,6 +147,11 @@
   <action name="actionPvZ_P">
    <property name="text">
     <string>植物大战僵尸(&amp;P)</string>
+   </property>
+  </action>
+  <action name="actionAbout_A">
+   <property name="text">
+    <string>关于(&amp;A)</string>
    </property>
   </action>
  </widget>
