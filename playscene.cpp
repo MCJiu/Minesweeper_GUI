@@ -8,6 +8,7 @@ PlayScene::PlayScene(QObject *parent)
 {
     setMap(9, 9, 10);
     m_theme = CLASSIC;
+    open_times = 0;
 }
 
 void PlayScene::initialize()
@@ -15,6 +16,7 @@ void PlayScene::initialize()
     clear();
     m_remainMine = m_mineNum;
     m_steps = 0;
+    open_times = 0;
     // 设置 scene 的直角坐标位置参数
     int left = -(SIDE_LENTH * column() / 2);
     int top = -(SIDE_LENTH * row() / 2);
@@ -40,8 +42,8 @@ void PlayScene::initialize()
         }
     }
 
-    setRandMine();   // 随机布雷
-    setMineAround(); // 设置格子周围雷数
+    //    setRandMine();   // 随机布雷
+    //    setMineAround(); // 设置格子周围雷数
 
     for (int i = 0; i < m_row; i++)
     {
@@ -129,6 +131,12 @@ void PlayScene::openLattice(int x, int y)
 {
     if (board[x][y]->status() == CLOSED)
     {
+        open_times++;
+        if (open_times == 1)
+        {
+            setRandMine(x, y);
+            setMineAround();
+        }
         board[x][y]->setStatus(OPENED);
         board[x][y]->updateLattice();
         if (board[x][y]->mineAround() == 0 && board[x][y]->isMine() == false) // 如果被打开的格子是0，则要递归打开周围的格子
@@ -147,18 +155,18 @@ void PlayScene::openLattice(int x, int y)
     }
 }
 
-void PlayScene::setRandMine()
+void PlayScene::setRandMine(int x, int y) // x,y: 首次左键单击要打开的格子坐标
 {
     srand(time(nullptr));
     int minePlaced = 0;
-    int x, y;
+    int mine_x, mine_y;
     while (minePlaced < m_mineNum)
     {
-        x = rand() % m_row;
-        y = rand() % m_column;
-        if (!board[x][y]->isMine())
+        mine_x = rand() % m_row;
+        mine_y = rand() % m_column;
+        if ((!board[mine_x][mine_y]->isMine()) && !(mine_x == x - 1 && mine_y == y - 1) && !(mine_x == x - 1 && mine_y == y) && !(mine_x == x - 1 && mine_y == y + 1) && !(mine_x == x && mine_y == y - 1) && !(mine_x == x && mine_y == y) && !(mine_x == x && mine_y == y + 1) && !(mine_x == x + 1 && mine_y == y - 1) && !(mine_x == x + 1 && mine_y == y) && !(mine_x == x + 1 && mine_y == y + 1))
         {
-            board[x][y]->setMine(true);
+            board[mine_x][mine_y]->setMine(true);
             minePlaced++;
         }
     }

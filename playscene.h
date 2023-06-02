@@ -19,6 +19,7 @@ class PlayScene : public QGraphicsScene
     int m_remainMine; // 剩余雷数
     int m_steps;      // 已进行的操作数
     int m_theme;
+    int open_times;
     LatticeItem *board[MAX_ROW][MAX_COLUMN];
 
   public:
@@ -49,7 +50,7 @@ class PlayScene : public QGraphicsScene
     void r_rightClick(int x, int y);
     void r_doubleClick(int x, int y);
     void openLattice(int x, int y);
-    void setRandMine();
+    void setRandMine(int x, int y);
     void setMineAround();
     void on_gameStatusChange();
     void on_flagNumChange();

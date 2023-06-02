@@ -27,11 +27,13 @@ void DialogDifficulty::iniDialogDifficulty(int row, int column, int mine)
 void DialogDifficulty::on_spinBoxRow_valueChanged(int rowValue)
 {
     int colunmValue = ui->spinBoxColumn->value();
-    ui->spinBoxMine->setMaximum(rowValue * colunmValue * 0.9);
+    ui->spinBoxMine->setMinimum(int(rowValue * colunmValue * 0.1));
+    ui->spinBoxMine->setMaximum(int(rowValue * colunmValue * 0.7));
 }
 // 在列数设置发生变化时改变雷数设置的最大值
 void DialogDifficulty::on_spinBoxColumn_valueChanged(int colunmValue)
 {
     int rowValue = ui->spinBoxRow->value();
-    ui->spinBoxMine->setMaximum(int(rowValue * colunmValue * 0.9));
+    ui->spinBoxMine->setMinimum(int(rowValue * colunmValue * 0.1));
+    ui->spinBoxMine->setMaximum(int(rowValue * colunmValue * 0.7));
 }
