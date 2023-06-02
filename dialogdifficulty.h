@@ -18,6 +18,8 @@ class DialogDifficulty : public QDialog
     int rowCount();
     int columnCount();
     int mineCount();
+
+    // 在打开自定义难度对话框时初始化对话框中三个spinbox的值
     void iniDialogDifficulty(int row, int column, int mine);
 
   private slots:
