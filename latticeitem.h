@@ -14,14 +14,14 @@ class LatticeItem : public QObject, public QGraphicsPixmapItem
   private:
     int m_row;
     int m_column;
-    bool m_isMine;
-    int m_mineAround;
-    int m_status; // CLOSED, OPENED, FLAG, QUESTION
+    bool m_isMine;    // 格子是否是雷
+    int m_mineAround; // 该格子周围的雷数
+    int m_status;     // CLOSED, OPENED, FLAG, QUESTION
     int m_theme;
 
   protected:
-    void mousePressEvent(QGraphicsSceneMouseEvent *event) override;
-    void mouseDoubleClickEvent(QGraphicsSceneMouseEvent *event) override;
+    void mousePressEvent(QGraphicsSceneMouseEvent *event) override;       // 检测鼠标点击事件
+    void mouseDoubleClickEvent(QGraphicsSceneMouseEvent *event) override; //检测鼠标双击事件
 
   public:
     explicit LatticeItem(int theme = CLASSIC, QObject *parent = nullptr);
