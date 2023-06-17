@@ -1,5 +1,4 @@
 #include "dialogdifficulty.h"
-
 #include "ui_dialogdifficulty.h"
 
 DialogDifficulty::DialogDifficulty(QWidget *parent)
