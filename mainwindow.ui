@@ -18,18 +18,42 @@
     <item>
      <layout class="QHBoxLayout" name="horizontalLayout">
       <item>
-       <widget class="QLCDNumber" name="lcdNumber"/>
+       <widget class="QLCDNumber" name="lcd_remainMine">
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>50</height>
+         </size>
+        </property>
+        <property name="digitCount">
+         <number>5</number>
+        </property>
+       </widget>
       </item>
       <item>
-       <widget class="QGraphicsView" name="graphicsView"/>
+       <widget class="QGraphicsView" name="emojiView">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>50</height>
+         </size>
+        </property>
+       </widget>
       </item>
       <item>
-       <widget class="QLCDNumber" name="lcdNumber_2"/>
+       <widget class="QLCDNumber" name="lcd_timer">
+        <property name="maximumSize">
+         <size>
+          <width>100</width>
+          <height>50</height>
+         </size>
+        </property>
+       </widget>
       </item>
      </layout>
     </item>
     <item>
-     <widget class="QGraphicsView" name="graphicsView_2">
+     <widget class="QGraphicsView" name="gameView">
       <property name="minimumSize">
        <size>
         <width>380</width>
@@ -59,7 +83,26 @@
     <addaction name="separator"/>
     <addaction name="actionCustomize_C"/>
    </widget>
+   <widget class="QMenu" name="menu_G">
+    <property name="title">
+     <string>游戏(&amp;G)</string>
+    </property>
+    <addaction name="actionNewGame_N"/>
+    <addaction name="separator"/>
+    <addaction name="actionAbout_A"/>
+    <addaction name="actionQuit_Q"/>
+   </widget>
+   <widget class="QMenu" name="menu_T">
+    <property name="title">
+     <string>主题(&amp;T)</string>
+    </property>
+    <addaction name="actionClassic_C"/>
+    <addaction name="actionDog_D"/>
+    <addaction name="actionPvZ_P"/>
+   </widget>
+   <addaction name="menu_G"/>
    <addaction name="menu_D"/>
+   <addaction name="menu_T"/>
   </widget>
   <action name="actionPrimary_P">
    <property name="text">
@@ -81,7 +124,54 @@
     <string>自定义(&amp;C)</string>
    </property>
   </action>
+  <action name="actionNewGame_N">
+   <property name="text">
+    <string>新游戏(&amp;N)</string>
+   </property>
+  </action>
+  <action name="actionQuit_Q">
+   <property name="text">
+    <string>退出(&amp;Q)</string>
+   </property>
+  </action>
+  <action name="actionClassic_C">
+   <property name="text">
+    <string>经典(&amp;C)</string>
+   </property>
+  </action>
+  <action name="actionDog_D">
+   <property name="text">
+    <string>小狗(&amp;D)</string>
+   </property>
+  </action>
+  <action name="actionPvZ_P">
+   <property name="text">
+    <string>植物大战僵尸(&amp;P)</string>
+   </property>
+  </action>
+  <action name="actionAbout_A">
+   <property name="text">
+    <string>关于(&amp;A)</string>
+   </property>
+  </action>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>actionQuit_Q</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>199</x>
+     <y>149</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

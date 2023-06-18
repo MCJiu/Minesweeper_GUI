@@ -10,6 +10,8 @@ CONFIG += c++17
 
 SOURCES += \
     dialogdifficulty.cpp \
+    emojiitem.cpp \
+    emojiscene.cpp \
     latticeitem.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -17,6 +19,9 @@ SOURCES += \
 
 HEADERS += \
     dialogdifficulty.h \
+    emojiitem.h \
+    emojiscene.h \
+    globalconst.h \
     latticeitem.h \
     mainwindow.h \
     playscene.h
