@@ -8,9 +8,9 @@
 
 ## 开发团队
 
-- MCJiu
-- cby
-- Gcoin42
+- [MCJiu](https://github.com/MCJiu)
+- [bingyangCao](https://github.com/bingyangCao)
+- [Gcoin42](https://github.com/Gcoin42)
 
 ## 游戏界面展示
 
