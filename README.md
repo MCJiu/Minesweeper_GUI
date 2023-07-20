@@ -30,6 +30,12 @@
 
 自定义难度窗口
 
+## 构建环境
+
+本项目使用
+- Qt 6.5.0 进行开发
+- Qt Creator 10.0.2 (Community) 作为 IDE
+- Desktop Qt 6.5.0 MinGW 64-bit 工具构建
 
 ## 开源协议
 
