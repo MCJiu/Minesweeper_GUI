@@ -1,5 +1,5 @@
-#include <emojiitem.h>
-#include <emojiscene.h>
+#include <include/emojiitem.h>
+#include <include/emojiscene.h>
 
 EmojiScene::EmojiScene(QObject *parent) : QGraphicsScene{parent}
 {

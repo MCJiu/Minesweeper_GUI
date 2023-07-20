@@ -2,8 +2,8 @@
 #define EMOJISCENE_H
 
 #include <QGraphicsScene>
-#include <emojiitem.h>
-#include <globalconst.h>
+#include <include/emojiitem.h>
+#include <include/globalconst.h>
 
 class EmojiScene : public QGraphicsScene
 {

@@ -1,5 +1,5 @@
-#include "playscene.h"
-#include <mainwindow.h>
+#include <include/mainwindow.h>
+#include <include/playscene.h>
 #include <stdlib.h>
 #include <time.h>
 

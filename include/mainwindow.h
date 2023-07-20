@@ -5,9 +5,9 @@
 #include <QMainWindow>
 #include <QTime>
 #include <QTimer>
-#include <emojiscene.h>
-#include <globalconst.h>
-#include <playscene.h>
+#include <include/emojiscene.h>
+#include <include/globalconst.h>
+#include <include/playscene.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui

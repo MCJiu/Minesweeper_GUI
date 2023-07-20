@@ -1,5 +1,5 @@
-#include "latticeitem.h"
 #include <QDebug>
+#include <include/latticeitem.h>
 
 void LatticeItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
 {

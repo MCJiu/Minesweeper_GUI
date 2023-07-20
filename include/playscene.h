@@ -3,8 +3,8 @@
 
 #include <QGraphicsScene>
 #include <QList>
-#include <globalconst.h>
-#include <latticeitem.h>
+#include <include/globalconst.h>
+#include <include/latticeitem.h>
 
 const int MAX_ROW = 24;
 const int MAX_COLUMN = 30;

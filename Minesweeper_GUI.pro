@@ -9,26 +9,26 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    dialogdifficulty.cpp \
-    emojiitem.cpp \
-    emojiscene.cpp \
-    latticeitem.cpp \
-    main.cpp \
-    mainwindow.cpp \
-    playscene.cpp
+    src\dialogdifficulty.cpp \
+    src\emojiitem.cpp \
+    src\emojiscene.cpp \
+    src\latticeitem.cpp \
+    src\main.cpp \
+    src\mainwindow.cpp \
+    src\playscene.cpp
 
 HEADERS += \
-    dialogdifficulty.h \
-    emojiitem.h \
-    emojiscene.h \
-    globalconst.h \
-    latticeitem.h \
-    mainwindow.h \
-    playscene.h
+    include\dialogdifficulty.h \
+    include\emojiitem.h \
+    include\emojiscene.h \
+    include\globalconst.h \
+    include\latticeitem.h \
+    include\mainwindow.h \
+    include\playscene.h
 
 FORMS += \
-    dialogdifficulty.ui \
-    mainwindow.ui
+    ui\dialogdifficulty.ui \
+    ui\mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

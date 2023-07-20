@@ -5,7 +5,7 @@
 #include <QGraphicsSceneMouseEvent>
 #include <QMouseEvent>
 #include <QObject>
-#include <globalconst.h>
+#include <include/globalconst.h>
 
 class EmojiItem : public QObject,
                   public QGraphicsPixmapItem

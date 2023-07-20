@@ -1,9 +1,9 @@
 #include "ui_mainwindow.h"
 #include <QMessageBox>
-#include <dialogdifficulty.h>
-#include <latticeitem.h>
-#include <mainwindow.h>
-#include <playscene.h>
+#include <include/dialogdifficulty.h>
+#include <include/latticeitem.h>
+#include <include/mainwindow.h>
+#include <include/playscene.h>
 
 //LatticeItem **createBoard(int row, int column);
 //void freeBoard(LatticeItem **board, int row);

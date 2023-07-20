@@ -1,5 +1,5 @@
-#include "emojiitem.h"
 #include <QObject>
+#include <include/emojiitem.h>
 
 EmojiItem::EmojiItem(int theme, QObject *parent) : QObject{parent}
 {
